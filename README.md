@@ -23,6 +23,6 @@ Przy ostatniej wartości zliczanej dla przycisk dać warunek od maksymalnej licz
 
 
 W jaki sposób można zwiększyć liczbę obsługiwanych poleceń oraz liczbę obsługiwanych parametrów? 
-- zwiększyć szybkość transmisji z 9600 na wyższą ,
+- zwiększyć szybkość transmisji z 9600 na wyższą , zwiększyć format ramki
 
 

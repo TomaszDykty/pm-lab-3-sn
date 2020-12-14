@@ -14,3 +14,8 @@ Grupa studencka: WEL18DE1S1
 
 # Odpowiedzi do pytań z instrukcji
 ...
+W jaki sposób można rozbudować funkcjonalność programu
+w przypadku gdy liczba naciśnięć przycisku przekroczy określoną ilość?
+wpisać unsignet przed liczbą int w deklaracji licznik będzie zliczał do dwa razy większej wartości a przy przepełnieniu spowrotem będzie liczył od zera
+
+Przy ostatniej wartości zliczanej dla przycisk dać warunek od maksymalnej liczby i utwożyć nową zmienną do której będzie zapisywana liczba prepełnień.

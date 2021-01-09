@@ -154,7 +154,7 @@ ISR (USART_RX_vect){
 */
 
 
-
+/*
 //323 ukończono
 #include <Arduino.h>
 #include <stdio.h>
@@ -207,6 +207,7 @@ void loop() {
   }
 }
 
+*/
 
 
 
@@ -214,7 +215,6 @@ void loop() {
 
 
 
-/*
 //322 ukończono
 #include <Arduino.h>
 #define BUTTON 2
@@ -223,7 +223,7 @@ int stanPrzycisku;
 int poprzedniStanPrzycisku = LOW;
 unsigned long poprzedniCzas = 0;
 unsigned int liczba_nacisniec = 0;
-
+unsigned int a = 0;//dodanie kolejnej liczbyglobalnej a do przepełnień
 void setup() {
   Serial.begin(9600);
   pinMode(BUTTON, INPUT);
@@ -241,8 +241,34 @@ void loop() {
       stanPrzycisku = odczyt;
       if (stanPrzycisku == HIGH) {
         liczba_nacisniec++;
-
+        if (liczba_nacisniec>=10000)
+            {a++;
+            liczba_nacisniec=0;//wyzerowanie liczby naciśnięć aby nie leciała do 65534 po której się wyzeruje
+            }
         Serial.print("Liczba nacisniec przycisku: ");
+        if (liczba_nacisniec>=10000 || a>0){
+          Serial.print(a);//wyświetlenie teraz przepełnienie nastąpi dopiero po przekroczeniu 655350000 wciśnięciach
+          
+        }
+        if (liczba_nacisniec<10 && a>0){// 3 ify z elzami poto by wpisać zera przy wyświetlaniu danych
+          Serial.print("000");
+        }
+        else
+        {
+          if (liczba_nacisniec<100 && a>0){
+            Serial.print("00");
+          }
+          else
+          {
+            if (liczba_nacisniec<1000 && a>0){
+             Serial.print("0");
+           }
+            
+          }
+          
+        }
+        
+
         Serial.println(liczba_nacisniec);
       }
     }
@@ -251,7 +277,8 @@ void loop() {
   poprzedniStanPrzycisku = odczyt;
 }
 
-*/
+
+
 
 
 
